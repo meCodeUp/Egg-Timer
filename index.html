@@ -7,36 +7,50 @@
     <title>Eieruhr</title>
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
+    <script defer src="js/script.js"></script>
   </head>
   <body class="background-dark">
+    <!-- Navigationsbereich -->
     <div class="menu_btn">
-      <a href="#" onclick="toggelSidebar()" class="btn">
-        <img src="img/menu_btn.png" alt="Menu Button">
-      </a>
-      <div class="sidebar is-hidden">
+      <button onclick="toggleSidebar()" class="btn" aria-label="Sidebar öffnen">
+        <img src="img/menu_btn.png" alt="Menü Button">
+      </button>
+      <nav class="sidebar is-hidden" aria-label="Seitennavigation">
         <ul>
           <li>
-            <a href="#" onclick="setTimer(5);">5 Minuten</a>
+            <a href="javascript:void(0)" onclick="setTimer(5);">5 Minuten</a>
           </li>
           <li>
-            <a href="#" onclick="setTimer(6);">6 Minuten</a>
+            <a href="javascript:void(0)" onclick="setTimer(6);">6 Minuten</a>
           </li>
           <li>
-            <a href="#" onclick="setTimer(8);">8 Minuten</a>
+            <a href="javascript:void(0)" onclick="setTimer(8);">8 Minuten</a>
           </li>
           <li>
-            <a href="#" onclick="setTimer(10);">10 Minuten</a>
+            <a href="javascript:void(0)" onclick="setTimer(10);">10 Minuten</a>
           </li>
         </ul>
+      </nav>
+    </div>
+
+    <!-- Hauptinhalt -->
+    <main>
+      <div class="center margin-top size">
+        <img src="img/egg.png" alt="Ein Ei" aria-hidden="true">
       </div>
-    </div>
-    <div class="center margin-top size">
-      <img src="img/egg.png" alt="Ein Hünerei">
-    </div>
-    <div class="center margin-top timer" id="timer">05 : 00</div>
-    <div class="center margin-top size">
-      <img onclick="startTimer()" src="img/start_btn.png" alt="Starte Timer Button">
-    </div>
+      <div class="center margin-top timer" id="timer" role="timer" aria-live="polite">
+        05 : 00
+      </div>
+      <div class="center margin-top size">
+        <button onclick="startTimer()" class="btn" aria-label="Timer starten">
+          <img src="img/start_btn.png" alt="Starte Timer Button">
+        </button>
+      </div>
+    </main>
+
+    <!-- Fußzeile -->
+    <footer class="center margin-top">
+      <p style="color: white;">© 2025 Eieruhr-App | Version 1.0.0</p>
+    </footer>
   </body>
 </html>
