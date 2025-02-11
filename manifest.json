@@ -20,5 +20,11 @@
   ],
   "orientation": "portrait",
   "lang": "de",
-  "dir": "ltr"
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "categories": [
+    "food",
+    "utilities"
+  ],
+  "scope": "https://mecodeup.github.io/Simple-Egg-Cooking-Timer/"
 }
