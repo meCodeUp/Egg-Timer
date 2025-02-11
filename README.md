@@ -7,7 +7,6 @@ Die **Eieruhr-App** ist eine minimalistische und benutzerfreundliche Progressive
 
 ## Funktionen
 
-### Hauptfunktionen:
 - **Timer-Start:**
   - Starten Sie den Timer mit einem einfachen Klick.
   - Die Standardzeit beträgt 5 Minuten, kann aber angepasst werden.
