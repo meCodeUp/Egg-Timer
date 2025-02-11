@@ -1,7 +1,7 @@
 {
   "name": "Eieruhr App",
   "short_name": "Eieruhr",
-  "description": "Eine Eieruhr-App für den Browser.",
+  "description": "Eine einfache und benutzerfreundliche Eieruhr-App, die direkt im Browser genutzt werden kann. Zusätzlich ist sie als Progressive Web App (PWA) verfügbar, sodass du sie bequem installieren und auch offline verwenden kannst. Perfekt für den Alltag – simpel, praktisch und immer griffbereit!.",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#E1BC6B",
