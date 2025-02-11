@@ -2,7 +2,7 @@
   "name": "Eieruhr App",
   "short_name": "Eieruhr",
   "description": "Eine Eieruhr-App für den Browser.",
-  "start_url": "/index.html",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#262626",
   "theme_color": "#333333",
