@@ -58,7 +58,7 @@ Die Eieruhr-App kann als Progressive Web App (PWA) installiert werden:
 
 ## Kontakt & Feedback
 Wenn Sie Fragen, Vorschläge oder Feedback haben, melden Sie sich gerne unter:
-- **GitHub:** [Projekt-Repository](#)
+- **GitHub:** [Projekt-Repository](https://github.com/meCodeUp/Simple-Egg-Cooking-Timer)
 
 Vielen Dank, dass Sie die Eieruhr-App nutzen!
 
