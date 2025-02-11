@@ -1,55 +1,45 @@
-const CACHE_NAME = 'eieruhr-cache-v1';
-const URLS_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/css/styles.css',
-  '/js/app.js',
-  '/img/icon.png'
-];
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
-// Install Event - Cache assets
-self.addEventListener('install', (event) => {
+const CACHE = "pwabuilder-page";
+const offlineFallbackPage = "offline.html";
+
+// Skip waiting
+self.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "SKIP_WAITING") {
+    self.skipWaiting();
+  }
+});
+
+// Cache the offline fallback page during install
+self.addEventListener('install', async (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(URLS_TO_CACHE))
+    caches.open(CACHE).then((cache) => cache.add(offlineFallbackPage))
   );
 });
 
-// Fetch Event - Serve cached assets
+// Enable navigation preload
+if (workbox.navigationPreload.isSupported()) {
+  workbox.navigationPreload.enable();
+}
+
+// Fetch event handler
 self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => response || fetch(event.request))
-  );
-});
+  if (event.request.mode === 'navigate') {
+    event.respondWith((async () => {
+      try {
+        const preloadResp = await event.preloadResponse;
 
-// Background Sync
-self.addEventListener('sync', (event) => {
-  if (event.tag === 'sync-data') {
-    event.waitUntil(syncData());
+        if (preloadResp) {
+          return preloadResp;
+        }
+
+        const networkResp = await fetch(event.request);
+        return networkResp;
+      } catch (error) {
+        const cache = await caches.open(CACHE);
+        const cachedResp = await cache.match(offlineFallbackPage);
+        return cachedResp;
+      }
+    })());
   }
-});
-
-async function syncData() {
-  console.log('Synchronizing data...');
-  // Synchronize data logic here
-}
-
-// Periodic Sync
-self.addEventListener('periodicsync', (event) => {
-  if (event.tag === 'content-sync') {
-    event.waitUntil(syncContent());
-  }
-});
-
-async function syncContent() {
-  console.log('Periodic content synchronization...');
-  // Periodic synchronization logic here
-}
-
-// Push Notifications
-self.addEventListener('push', (event) => {
-  const data = event.data.json();
-  self.registration.showNotification(data.title, {
-    body: data.body,
-    icon: '/img/icon.png'
-  });
 });
