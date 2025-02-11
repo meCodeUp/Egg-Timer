@@ -103,3 +103,15 @@ document.addEventListener('keydown', (event) => {
         toggleSidebar(); // Sidebar bei "Esc" schließen
     }
 });
+
+// Service Worker
+//----------------
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+        .then(() => {
+            console.log("Service Worker registriert.");
+        })
+        .catch((error) => {
+            console.error("Service Worker Fehler:", error);
+        });
+}
