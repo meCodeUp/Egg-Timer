@@ -6,7 +6,9 @@
   "start_url": "index.html",
   "scope": "/",
   "display": "standalone",
-  "display_override": ["window-controls-overlay"],
+  "display_override": [
+    "window-controls-overlay"
+  ],
   "background_color": "#E1BC6B",
   "theme_color": "#333333",
   "icons": [
@@ -59,5 +61,6 @@
       "text": "description",
       "url": "link"
     }
-  }
+  },
+  "orientation": "portrait"
 }
