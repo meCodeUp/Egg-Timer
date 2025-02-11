@@ -6,9 +6,7 @@
   "start_url": "index.html",
   "scope": "/",
   "display": "standalone",
-  "display_override": [
-    "window-controls-overlay"
-  ],
+  "display_override": ["window-controls-overlay"],
   "background_color": "#E1BC6B",
   "theme_color": "#333333",
   "icons": [
@@ -62,5 +60,34 @@
       "url": "link"
     }
   },
-  "orientation": "portrait"
+  "edge_side_panel": {
+    "preferred_panel_width": 320
+  },
+  "file_handlers": {
+    "open-text": {
+      "extensions": [".txt", ".log"]
+    }
+  },
+  "handle_links": ["https://mecodeup.github.io/Simple-Egg-Cooking-Timer/"],
+  "protocol_handlers": [
+    {
+      "protocol": "web+timer",
+      "url": "https://mecodeup.github.io/Simple-Egg-Cooking-Timer/?timer=%s"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Timer starten",
+      "short_name": "Start Timer",
+      "description": "Starte die Eieruhr sofort.",
+      "url": "/index.html?start=true",
+      "icons": [
+        {
+          "src": "img/shortcut-icon.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
 }
