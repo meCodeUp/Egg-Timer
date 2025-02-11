@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="de">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eieruhr</title>
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/script.js"></script>
-</head>
-
-<body class="background-dark">
-  <div class="menu_btn">
-    <a href="#" onclick="toggelSidebar()" class="btn"><img src="img/menu_btn.png" alt="Menu Button"></a>
-    <div class="sidebar is-hidden">
-      <ul>
-        <li><a href="#" onclick="setTimer(5);">5 Minuten</a></li>
-        <li><a href="#" onclick="setTimer(6);">6 Minuten</a></li>
-        <li><a href="#" onclick="setTimer(8);">8 Minuten</a></li>
-        <li><a href="#" onclick="setTimer(10);">10 Minuten</a></li>
-      </ul>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eieruhr</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+  </head>
+  <body class="background-dark">
+    <div class="menu_btn">
+      <a href="#" onclick="toggelSidebar()" class="btn">
+        <img src="img/menu_btn.png" alt="Menu Button">
+      </a>
+      <div class="sidebar is-hidden">
+        <ul>
+          <li>
+            <a href="#" onclick="setTimer(5);">5 Minuten</a>
+          </li>
+          <li>
+            <a href="#" onclick="setTimer(6);">6 Minuten</a>
+          </li>
+          <li>
+            <a href="#" onclick="setTimer(8);">8 Minuten</a>
+          </li>
+          <li>
+            <a href="#" onclick="setTimer(10);">10 Minuten</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-
-
-  <div class="center margin-top size">
-    <img src="img/egg.png" alt="Ein Hünerei">
-  </div>
-
-  <div class="center margin-top timer" id="timer">05 : 00</div>
-
-  <div class="center margin-top size">
-    <img onclick="startTimer()" src="img/start_btn.png" alt="Starte Timer Button">
-  </div>
-</body>
-
+    <div class="center margin-top size">
+      <img src="img/egg.png" alt="Ein Hünerei">
+    </div>
+    <div class="center margin-top timer" id="timer">05 : 00</div>
+    <div class="center margin-top size">
+      <img onclick="startTimer()" src="img/start_btn.png" alt="Starte Timer Button">
+    </div>
+  </body>
 </html>

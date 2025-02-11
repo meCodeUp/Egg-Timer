@@ -7,7 +7,7 @@ function startTimer() {
         let timerMinutes = (1000 * 60) * 5;
         let endTime = startTime + timerMinutes;
 
-        setInterval(function () {
+        setInterval(function() {
             let timeLeft = endTime - new Date().getTime();
 
             if (timeLeft > 0) {
@@ -28,15 +28,15 @@ function startTimer() {
     }
 }
 
-function setTimer(minutes){
-    if(minutes == 10){
+function setTimer(minutes) {
+    if (minutes == 10) {
         return timer.innerHTML = minutes + ' : 00';
     } else {
         return timer.innerHTML = '0' + minutes + ' : 00';
     }
 }
 
-function toggelSidebar(){
+function toggelSidebar() {
     const sidebar = document.querySelector('.sidebar');
     sidebar.classList.toggle('is-hidden');
 }
