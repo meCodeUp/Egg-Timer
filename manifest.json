@@ -1,9 +1,12 @@
 {
   "name": "Eieruhr App",
   "short_name": "Eieruhr",
+  "id": "/",
   "description": "Eine einfache und benutzerfreundliche Eieruhr-App, die direkt im Browser genutzt werden kann. Zusätzlich ist sie als Progressive Web App (PWA) verfügbar, sodass du sie bequem installieren und auch offline verwenden kannst. Perfekt für den Alltag – simpel, praktisch und immer griffbereit!.",
   "start_url": "index.html",
+  "scope": "https://mecodeup.github.io/Simple-Egg-Cooking-Timer/",
   "display": "standalone",
+  "display_override": ["window-controls-overlay"],
   "background_color": "#E1BC6B",
   "theme_color": "#333333",
   "icons": [
@@ -18,6 +21,21 @@
       "type": "image/png"
     }
   ],
+  "screenshots": [
+    {
+      "src": "img/screenshot1.png",
+      "sizes": "640x480",
+      "type": "image/png"
+    },
+    {
+      "src": "img/screenshot2.png",
+      "sizes": "1280x720",
+      "type": "image/png"
+    }
+  ],
+  "launch_handler": {
+    "client_mode": "navigate"
+  },
   "orientation": "portrait",
   "lang": "de",
   "dir": "ltr",
@@ -25,6 +43,5 @@
   "categories": [
     "food",
     "utilities"
-  ],
-  "scope": "https://mecodeup.github.io/Simple-Egg-Cooking-Timer/"
+  ]
 }
