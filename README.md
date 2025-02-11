@@ -1,12 +1,6 @@
 # Simple Egg Cooking Timer 
 
 ## Übersicht
-Die **Eieruhr-App** ist eine minimalistische und benutzerfreundliche Progressive Web App (PWA), die als Timer für verschiedene Zeitintervalle dient. Sie ist perfekt geeignet, um Eier zu kochen, kurze Pausen zu planen oder andere zeitabhängige Aufgaben zu erledigen. Durch das klare Design und die einfache Bedienung ist die App sowohl für Desktop- als auch Mobilgeräte optimiert und kann direkt aus dem Browser installiert werden.
-
----
-
-## Funktionen
-
 - **Timer-Start:**
   - Starten Sie den Timer mit einem einfachen Klick.
   - Die Standardzeit beträgt 5 Minuten, kann aber angepasst werden.
@@ -33,9 +27,10 @@ Die **Eieruhr-App** ist eine minimalistische und benutzerfreundliche Progressive
 Die Eieruhr-App kann als Progressive Web App (PWA) installiert werden:
 
 1. Öffnen Sie die App in einem unterstützten Browser (z. B. Google Chrome, Microsoft Edge).
-2. Klicken Sie auf das Symbol „App installieren“ (in der Adressleiste sichtbar).
-3. Folgen Sie den Anweisungen, um die App auf Ihrem Gerät zu installieren.
-4. Nach der Installation kann die App wie eine native Anwendung genutzt werden.
+2. **Mobile Geräte:** Tippen Sie auf das Browser-Menü (drei Punkte oben rechts) und wählen Sie "Zum Startbildschirm hinzufügen".
+3. **Desktop:** Klicken Sie auf das Symbol „App installieren“ (in der Adressleiste sichtbar).
+4. Folgen Sie den Anweisungen, um die App auf Ihrem Gerät zu installieren.
+5. Nach der Installation kann die App wie eine native Anwendung genutzt werden.
 
 ---
 
@@ -57,8 +52,7 @@ Die Eieruhr-App kann als Progressive Web App (PWA) installiert werden:
 ---
 
 ## Kontakt & Feedback
-Wenn Sie Fragen, Vorschläge oder Feedback haben, melden Sie sich gerne unter:
+Wenn Sie Fragen, Vorschläge oder Feedback haben, melden Sie sich gerne über GitHub:
 - **GitHub:** [Projekt-Repository](https://github.com/meCodeUp/Simple-Egg-Cooking-Timer)
 
 Vielen Dank, dass Sie die Eieruhr-App nutzen!
-
