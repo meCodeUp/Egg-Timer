@@ -1,2 +1,2 @@
-# Egg-Timer
+# A Simple Egg Cooking Timer 
 
