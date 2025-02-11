@@ -1,43 +1,55 @@
-const CACHE_NAME = "eieruhr-cache-v1";
-const urlsToCache = [
-    "/",
-    "/index.html",
-    "/css/style.css",
-    "/js/script.js",
-    "/img/egg.png",
-    "/img/menu_btn.png",
-    "/img/start_btn.png"
+const CACHE_NAME = 'eieruhr-cache-v1';
+const URLS_TO_CACHE = [
+  '/',
+  '/index.html',
+  '/css/styles.css',
+  '/js/app.js',
+  '/img/icon.png'
 ];
 
-// Installations-Event: Dateien werden gecacht
-self.addEventListener("install", (event) => {
-    event.waitUntil(
-        caches.open(CACHE_NAME).then((cache) => {
-            return cache.addAll(urlsToCache);
-        })
-    );
+// Install Event - Cache assets
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(URLS_TO_CACHE))
+  );
 });
 
-// Aktivierungs-Event
-self.addEventListener("activate", (event) => {
-    event.waitUntil(
-        caches.keys().then((cacheNames) => {
-            return Promise.all(
-                cacheNames.map((cache) => {
-                    if (cache !== CACHE_NAME) {
-                        return caches.delete(cache);
-                    }
-                })
-            );
-        })
-    );
+// Fetch Event - Serve cached assets
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request).then((response) => response || fetch(event.request))
+  );
 });
 
-// Fetch-Event: Dateien aus dem Cache liefern
-self.addEventListener("fetch", (event) => {
-    event.respondWith(
-        caches.match(event.request).then((response) => {
-            return response || fetch(event.request);
-        })
-    );
+// Background Sync
+self.addEventListener('sync', (event) => {
+  if (event.tag === 'sync-data') {
+    event.waitUntil(syncData());
+  }
+});
+
+async function syncData() {
+  console.log('Synchronizing data...');
+  // Synchronize data logic here
+}
+
+// Periodic Sync
+self.addEventListener('periodicsync', (event) => {
+  if (event.tag === 'content-sync') {
+    event.waitUntil(syncContent());
+  }
+});
+
+async function syncContent() {
+  console.log('Periodic content synchronization...');
+  // Periodic synchronization logic here
+}
+
+// Push Notifications
+self.addEventListener('push', (event) => {
+  const data = event.data.json();
+  self.registration.showNotification(data.title, {
+    body: data.body,
+    icon: '/img/icon.png'
+  });
 });
